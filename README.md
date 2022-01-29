@@ -1,10 +1,19 @@
-# tablecloth
-An R package to improve tables and other output.
+# tablecloth <img src="sticker.png" align="right" width="150" /> 
 
-Install like this:
+> Tables look nicer with tablecloths.
 
-```
+## Install package
+
+``` r
 devtools::install_github("jrcalabrese/tablecloth")
+library(tablecloth)
 ```
 
-Thanks!
+## Introduction
+
+The **tablecloth** package is a continual work-in progress and is a collection of functions that help to create and format tables to be publication-ready. 
+
+If you have questions or comments, feel free to DM me on Twitter `@jrosecalabrese`.
+
+Hexsticker created with [Guangchuang Yu's `hexSticker` package](https://github.com/GuangchuangYu/hexSticker). 
+
