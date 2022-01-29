@@ -1,0 +1,32 @@
+---
+title: "Introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(tablecloth)
+```
+
+```{r}
+data(mtcars)
+m1 <- lm(mpg ~ cyl, mtcars) %>% tbl_regression()
+m2 <- lm(mpg ~ cyl, mtcars) %>% tbl_regression()
+
+tbl_merge(
+  tbls = list(m1, m2)) %>%
+  apa_theme()
+```
+
