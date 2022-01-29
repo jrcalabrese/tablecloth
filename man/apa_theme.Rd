@@ -2,15 +2,15 @@
 % Please edit documentation in R/apa_theme.R
 \name{apa_theme}
 \alias{apa_theme}
-\title{Format a table using APA style}
+\title{Format a table using APA style.}
 \usage{
 apa_theme(ft)
 }
 \arguments{
-\item{ft}{Table object.}
+\item{ft}{A table like a \code{flextable} or \code{gtsummary} object. Will convert to \code{flextable} if not already a \code{flextable} object.}
 }
 \description{
-This function can be applied to both gtsummary and flextable objects, I think.
+This function can be applied to both \code{gtsummary} and \code{flextable} objects, I think.
 Maybe it will work on other things?
 I should update this later.
 }

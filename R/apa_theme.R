@@ -1,10 +1,10 @@
-#' Format a table using APA style
+#' Format a table using APA style.
 #'
-#' This function can be applied to both gtsummary and flextable objects, I think.
+#' This function can be applied to both `gtsummary` and `flextable` objects, I think.
 #' Maybe it will work on other things?
 #' I should update this later.
 #'
-#' @param ft Table object. It converts to flextable if not a flextable!
+#' @param ft A table like a `flextable` or `gtsummary` object. Will convert to `flextable` if not already a `flextable` object.
 #' 
 #' @export
 

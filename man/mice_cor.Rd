@@ -9,9 +9,9 @@ mice_cor(mira, x, title)
 \arguments{
 \item{mira}{A \code{mira} object.}
 
-\item{title}{The title of your correlation matrix.}
+\item{x}{List of variables from your \code{mira} object. Must be \code{character} class.}
 
-\item{A}{character object of your variables from your dataframe.}
+\item{title}{The title of your correlation matrix.}
 }
 \description{
 This takes data from a \code{mira} object and turns the variables you want

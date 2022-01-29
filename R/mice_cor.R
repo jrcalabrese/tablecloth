@@ -5,7 +5,9 @@
 #' I'll try to add something like x/y axis varnames in the future.
 #' 
 #' @param mira A `mira` object.
-#' @param A character object of your variables from your dataframe.
+#' 
+#' @param x List of variables from your `mira` object. Must be `character` class.
+#' 
 #' @param title The title of your correlation matrix.
 #' 
 #' @export
