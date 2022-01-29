@@ -1,0 +1,32 @@
+---
+title: "sticker"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sticker}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+#library(hexSticker)
+
+mod <- lm(mpg ~ cyl + disp, mtcars)
+
+mod %>%
+  tbl_regression() %>%
+  apa_theme()
+
+s <- sticker(~plot(cars, cex=.5, cex.axis=.5, mgp=c(0,.3,0), xlab="", ylab=""),
+          package="hexSticker", p_size=20, s_x=.8, s_y=.6, s_width=1.4, s_height=1.2,
+          filename="inst/figures/baseplot.png")
+```
+

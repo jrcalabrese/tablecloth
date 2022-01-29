@@ -2,19 +2,22 @@
 % Please edit documentation in R/mice_cor.R
 \name{mice_cor}
 \alias{mice_cor}
-\title{Make a correlation matrix from imputed data.}
+\title{Create a correlation matrix from imputed data.}
 \usage{
 mice_cor(mira, x, title)
 }
 \arguments{
 \item{mira}{A \code{mira} object.}
 
-\item{x}{List of variables from your \code{mira} object. Must be \code{character} class.}
+\item{x}{List of variables from your \code{mira} object. Must be \code{character} class.
+E.g. \code{vars = c("var1", "var2", "var3")}.}
 
-\item{title}{The title of your correlation matrix.}
+\item{title}{The title of your correlation matrix. Must be \code{character} class.}
 }
 \description{
-This takes data from a \code{mira} object and turns the variables you want
-into a correlation matrix. Make sure your variable names are pretty.
-I'll try to add something like x/y axis varnames in the future.
+This takes data from a \code{mira} object and turns the variables you specify
+into a correlation matrix. This is useful when handling imputed data.
+}
+\details{
+The output will be a \code{flextable} formatted in APA style.
 }

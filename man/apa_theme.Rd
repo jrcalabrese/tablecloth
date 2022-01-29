@@ -7,10 +7,9 @@
 apa_theme(ft)
 }
 \arguments{
-\item{ft}{A table like a \code{flextable} or \code{gtsummary} object. Will convert to \code{flextable} if not already a \code{flextable} object.}
+\item{ft}{A \code{flextable} or \code{gtsummary} object. Will convert to \code{flextable} if not a \code{flextable} object.}
 }
 \description{
-This function can be applied to both \code{gtsummary} and \code{flextable} objects, I think.
-Maybe it will work on other things?
-I should update this later.
+This function can be applied to \code{gtsummary} and \code{flextable} objects. It will format the table
+to be in APA style. You still need to manually add a title and save it as a .docx, though.
 }
