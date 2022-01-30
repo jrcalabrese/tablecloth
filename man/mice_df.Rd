@@ -9,11 +9,11 @@ mice_df(mids, vs, title, nm)
 \arguments{
 \item{mids}{A \code{mids} object.}
 
-\item{vs}{Variables from \code{mids}. Must be \code{character} class. E.g., c("bmi", "chl").}
+\item{vs}{Variables from \code{mids}. Must be \code{character} class. E.g., \code{c("bmi", "chl")}.}
 
 \item{title}{The title of your correlation matrix. Must be \code{character} class. Optional.}
 
-\item{nm}{Preferred variable names. Must be \code{character} class. E.g., c("bmi", "chl"). Optional.}
+\item{nm}{Preferred variable names. Must be \code{character} class. E.g., \code{c("BMI", "Cholesterol")}. Optional.}
 }
 \description{
 This takes data from a \code{mids} object and turns the variables you specify

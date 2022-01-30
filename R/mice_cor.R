@@ -7,7 +7,7 @@
 #'
 #' @param mids A `mids` object.
 #'
-#' @param vs Variables from `mids`. Must be `character` class. E.g., c("bmi", "chl").
+#' @param vs Variables from `mids`. Must be `character` class. E.g., `c("bmi", "chl")`.
 #'
 #' @param title The title of your correlation matrix. Must be `character` class. Optional.
 #'
