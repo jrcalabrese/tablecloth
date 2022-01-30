@@ -35,8 +35,6 @@ table <-
   tbl_merge(
   tbls = list(m1, m2, m3)) %>%
   apa_theme()
-
-#rm(m1, m2, m3)
 ```
 
 ```

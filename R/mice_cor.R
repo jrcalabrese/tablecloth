@@ -7,16 +7,16 @@
 #'
 #' @param mids A `mids` object.
 #'
-#' @param title The title of your correlation matrix. Must be `character` class.
+#' @param vs Variables from `mids`. Must be `character` class. E.g., c("bmi", "chl").
 #'
-#' @param ... Variables from your `mids` separated by commas. E.g., "bmi", "chl".
+#' @param title The title of your correlation matrix. Must be `character` class. Optional.
 #'
 #' @export
 
-mice_cor <- function(mids, title, ...) {
+mice_cor <- function(mids, vs, title) {
 
   # do the thing
-  res <- miceadds::micombine.cor(mi.res=mids, variables=c(...) ) %>%
+  res <- miceadds::micombine.cor(mi.res=mids, variables=vs) %>%
     select(c(variable1,variable2, r, p))
 
   # round digits
@@ -54,14 +54,20 @@ mice_cor <- function(mids, title, ...) {
   res <- res[rowSums(is.na(res)) != ncol(res), ]
   res <- res[,colSums(is.na(res)) < nrow(res)]
 
+  if (missing(title))
+    title <- "Correlation Matrix"
+  else
+    title <- title
+
   res <- res %>%
     rrtable::df2flextable(
     vanilla = TRUE,
     add.rownames = TRUE,
     colorheader = FALSE,
     align_body = "left",
-    NA2space = TRUE)  %>%
+    NA2space = TRUE) %>%
     apa_theme() %>%
+    compose(i = 1, j = 1, part = "header", as_paragraph(as_chunk(" "))) %>%
     flextable::add_header_lines(values = title)
 
   return(res)

@@ -4,14 +4,14 @@
 \alias{mice_cor}
 \title{Create a correlation matrix from imputed data.}
 \usage{
-mice_cor(mids, title, ...)
+mice_cor(mids, vs, title)
 }
 \arguments{
 \item{mids}{A \code{mids} object.}
 
-\item{title}{The title of your correlation matrix. Must be \code{character} class.}
+\item{vs}{Variables from \code{mids}. Must be \code{character} class. E.g., c("bmi", "chl").}
 
-\item{...}{Variables from your \code{mids} separated by commas. E.g., "bmi", "chl".}
+\item{title}{The title of your correlation matrix. Must be \code{character} class. Optional.}
 }
 \description{
 This takes data from a \code{mids} object and turns the variables you specify

@@ -5,7 +5,7 @@
 \alias{tablecloth}
 \title{tablecloth}
 \description{
-The \code{tablecloth} contains functions to help create publication-ready tables,
+The \code{tablecloth} package contains functions to help create publication-ready tables,
 even with non-standard data types (e.g., \code{mids}).
 }
 \details{
