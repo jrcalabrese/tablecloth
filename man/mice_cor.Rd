@@ -4,18 +4,18 @@
 \alias{mice_cor}
 \title{Create a correlation matrix from imputed data.}
 \usage{
-mice_cor(mira, x, title)
+mice_cor(mids, vs, title)
 }
 \arguments{
-\item{mira}{A \code{mira} object.}
+\item{mids}{A \code{mids} object.}
 
-\item{x}{List of variables from your \code{mira} object. Must be \code{character} class.
-E.g. \code{vars = c("var1", "var2", "var3")}.}
+\item{vs}{List of variables from your \code{mids} object. Must be \code{character} class.
+E.g. \code{vs = c("var1", "var2", "var3")}.}
 
 \item{title}{The title of your correlation matrix. Must be \code{character} class.}
 }
 \description{
-This takes data from a \code{mira} object and turns the variables you specify
+This takes data from a \code{mids} object and turns the variables you specify
 into a correlation matrix. This is useful when handling imputed data.
 }
 \details{

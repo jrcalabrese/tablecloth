@@ -1,23 +1,23 @@
 #' Create a correlation matrix from imputed data.
 #'
-#' This takes data from a `mira` object and turns the variables you specify
+#' This takes data from a `mids` object and turns the variables you specify
 #' into a correlation matrix. This is useful when handling imputed data.
 #'
 #' The output will be a `flextable` formatted in APA style.
 #'
-#' @param mira A `mira` object.
+#' @param mids A `mids` object.
 #'
-#' @param x List of variables from your `mira` object. Must be `character` class.
-#' E.g. `vars = c("var1", "var2", "var3")`.
+#' @param vs List of variables from your `mids` object. Must be `character` class.
+#' E.g. `vs = c("var1", "var2", "var3")`.
 #'
 #' @param title The title of your correlation matrix. Must be `character` class.
 #'
 #' @export
 
-mice_cor <- function(mira, x, title) {
+mice_cor <- function(mids, vs, title) {
 
   # do the thing
-  res <- miceadds::micombine.cor(mi.res=mira, variables=c(x) ) %>%
+  res <- miceadds::micombine.cor(mi.res=mids, variables=c(vs) ) %>%
     select(c(variable1,variable2, r, p))
 
   # round digits

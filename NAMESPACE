@@ -2,3 +2,4 @@
 
 export(apa_theme)
 export(mice_cor)
+export(mice_df)
