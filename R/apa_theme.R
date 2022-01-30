@@ -29,5 +29,6 @@ apa_theme <- function (ft)  {
     flextable::hline_bottom(border = officer::fp_border(width = 2),
                             part = "all") %>%
     flextable::hline(i = 1, border = officer::fp_border(width = 1), part = "header") %>%
-    flextable::set_table_properties(layout = "autofit")
+    flextable::set_table_properties(layout = "autofit") %>%
+    flextable::color(color = "black", part = "header")
 }

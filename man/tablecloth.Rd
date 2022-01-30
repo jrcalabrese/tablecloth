@@ -5,7 +5,11 @@
 \alias{tablecloth}
 \title{tablecloth}
 \description{
-This is where I'm putting functions that are helping me finish my Master's.
+The \code{tablecloth} contains functions to help create publication-ready tables,
+even with non-standard data types (e.g., \code{mids}).
+}
+\details{
+\if{html}{\figure{sticker.PNG}{options: width="20\%"}}
 }
 \author{
 Julianna Calabrese

@@ -7,17 +7,16 @@
 #'
 #' @param mids A `mids` object.
 #'
-#' @param vs List of variables from your `mids` object. Must be `character` class.
-#' E.g. `vs = c("var1", "var2", "var3")`.
-#'
 #' @param title The title of your correlation matrix. Must be `character` class.
+#'
+#' @param ... Variables from your `mids` separated by commas. E.g., "bmi", "chl".
 #'
 #' @export
 
-mice_cor <- function(mids, vs, title) {
+mice_cor <- function(mids, title, ...) {
 
   # do the thing
-  res <- miceadds::micombine.cor(mi.res=mids, variables=c(vs) ) %>%
+  res <- miceadds::micombine.cor(mi.res=mids, variables=c(...) ) %>%
     select(c(variable1,variable2, r, p))
 
   # round digits
@@ -53,7 +52,7 @@ mice_cor <- function(mids, vs, title) {
   # Extract lower triangle
   res[upper.tri(res,diag=TRUE)] <- NA
   res <- res[rowSums(is.na(res)) != ncol(res), ]
-  res <- res[,colSums(is.na(res))<nrow(res)]
+  res <- res[,colSums(is.na(res)) < nrow(res)]
 
   res <- res %>%
     rrtable::df2flextable(
