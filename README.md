@@ -1,4 +1,4 @@
-# tablecloth <img src="sticker.png" align="right" width="150" /> 
+# tablecloth <img src="man/figures/sticker.png" align="right" width="150" /> 
 
 > Tables look nicer with tablecloths.
 
