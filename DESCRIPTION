@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "calabrese.75@osu.edu",
            comment = c(ORCID = "0000-0003-1010-2951"))
-Description: Make sure to update this later!
+Description: Improve the appearance of tables.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
