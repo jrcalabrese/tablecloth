@@ -19,6 +19,7 @@ apa_theme <- function (ft)  {
 
   ft %>%
     flextable::font(fontname = "Times New Roman", part = "all") %>%
+    flextable::font(fontname = "Times New Roman", part = "footer") %>%
     flextable::fontsize(size = 12, part = "all") %>%
     flextable::align(align = "left", part = "body") %>%
     flextable::align(align = "center", part = "header") %>%
