@@ -5,19 +5,16 @@
 #'
 #' The output will be a `flextable` formatted in APA style.
 #'
-#' @param mids A `mids` object.
-#'
-#' @param vs Variables from `mids`. Must be `character` class. E.g., `c("bmi", "chl")`.
-#'
+#' @param imp A `mids` object.
+#' @param vs Variables from `imp`. Must be `character` class. E.g., `c("bmi", "chl")`.
 #' @param title The title of your correlation matrix. Must be `character` class. Optional.
-#'
 #' @param nm Preferred variable names. Must be `character` class. E.g., `c("BMI", "Cholesterol")`. Optional.
 #'
 #' @export
 
-mice_df <- function(mids, vs, title, nm){
+mice_df <- function(imp, vs, title, nm){
 
-  impdat <- mice::complete(mids, action = "long", include = FALSE)
+  impdat <- mice::complete(imp, action = "long", include = FALSE)
 
   # https://bookdown.org/mwheymans/bookmi/data-analysis-after-multiple-imputation.html
 
@@ -43,7 +40,7 @@ mice_df <- function(mids, vs, title, nm){
     z <- z %>% `rownames<-`(c("Mean", "Standard Deviation", "Minimum",
                    "Maximum", "Standard Error")) %>%
     t() %>% as.data.frame() %>%
-    rownames_to_column("Variable")
+    tibble::rownames_to_column("Variable")
 
     if (missing(title))
       title <- "Descriptive Statistics"
@@ -57,8 +54,19 @@ mice_df <- function(mids, vs, title, nm){
       colorheader = FALSE,
       align_body = "left",
       NA2space = TRUE) %>%
-    apa_theme() %>%
+    tablecloth::apa_theme() %>%
     flextable::add_header_lines(values = title)
 
   return(z)
 }
+
+#' @example
+data(nhanes)
+imp <- mice::mice(nhanes, m = 5, print = FALSE)
+vs <- c("bmi", "chl", "age")
+nm <- c("BMI", "Cholesterol", "Age")
+title <- "Title of my table"
+mice_df(imp = imp,
+         vs = vs,
+         title = title,
+         nm = nm)
