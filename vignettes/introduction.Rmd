@@ -37,6 +37,28 @@ table <-
   apa_theme()
 ```
 
+```{r}
+data(nhanes)
+imp <- mice::mice(nhanes, m = 5, print = FALSE)
+vs <- c("bmi", "chl", "age")
+nm <- c("BMI", "Cholesterol", "Age")
+title <- "Title of my table"
+mice_df(imp = imp,
+         vs = vs,
+         title = title,
+         nm = nm)
+```
+
+```{r}
+data(nhanes)
+imp <- mice::mice(nhanes, m = 5, print = FALSE)
+vs <- c("bmi", "chl", "age")
+title <- "Title of my matrix"
+mice_cor(imp = imp,
+         vs = vs,
+         title = title)
+```
+
 ```
 # Making a hexsticker!
 # library(hexSticker)

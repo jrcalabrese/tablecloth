@@ -6,16 +6,21 @@
 #' The output will be a `flextable` formatted in APA style.
 #'
 #' @param imp A `mids` object.
+#'
 #' @param vs Variables from `imp`. Must be `character` class. E.g., `c("bmi", "chl")`.
+#'
 #' @param title The title of your correlation matrix. Must be `character` class. Optional.
+#'
 #' @param nm Preferred variable names. Must be `character` class. E.g., `c("BMI", "Cholesterol")`. Optional.
 #'
 #' @export
 
 mice_df <- function(imp, vs, title, nm){
 
+  # complete data
   impdat <- mice::complete(imp, action = "long", include = FALSE)
 
+  # this is where this function came from
   # https://bookdown.org/mwheymans/bookmi/data-analysis-after-multiple-imputation.html
 
   z <- lapply(as.list(vs), function(x){
@@ -59,14 +64,3 @@ mice_df <- function(imp, vs, title, nm){
 
   return(z)
 }
-
-#' @example
-data(nhanes)
-imp <- mice::mice(nhanes, m = 5, print = FALSE)
-vs <- c("bmi", "chl", "age")
-nm <- c("BMI", "Cholesterol", "Age")
-title <- "Title of my table"
-mice_df(imp = imp,
-         vs = vs,
-         title = title,
-         nm = nm)

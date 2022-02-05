@@ -6,13 +6,15 @@
 #' The output will be a `flextable` formatted in APA style.
 #'
 #' @param imp A `mids` object.
+#'
 #' @param vs Variables from `imp`. Must be `character` class. E.g., `c("bmi", "chl")`.
+#'
 #' @param title The title of your correlation matrix. Must be `character` class. Optional.
 #'
 #' @export
 mice_cor <- function(imp, vs, title) {
 
-  # do the thing
+  # use micombine.cor
   res <- miceadds::micombine.cor(mi.res = imp, variables = vs) %>%
     dplyr::select(c(variable1,variable2, r, p))
 
@@ -69,12 +71,3 @@ mice_cor <- function(imp, vs, title) {
 
   return(res)
 }
-
-#' @example
-data(nhanes)
-imp <- mice::mice(nhanes, m = 5, print = FALSE)
-vs <- c("bmi", "chl", "age")
-title <- "Title of my matrix"
-mice_cor(imp = imp,
-         vs = vs,
-         title = title)
