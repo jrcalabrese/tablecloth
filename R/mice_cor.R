@@ -7,9 +7,9 @@
 #'
 #' @param imp A `mids` object.
 #'
-#' @param vs Variables from `imp`. Must be `character` class. E.g., `c("bmi", "chl")`.
+#' @param vs Character vector, variables from `imp`. E.g., `c("bmi", "chl")`.
 #'
-#' @param title The title of your correlation matrix. Must be `character` class. Optional.
+#' @param title Character vectpr, title of your correlation matrix. Optional.
 #'
 #' @export
 mice_cor <- function(imp, vs, title) {

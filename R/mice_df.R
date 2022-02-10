@@ -7,11 +7,11 @@
 #'
 #' @param imp A `mids` object.
 #'
-#' @param vs Variables from `imp`. Must be `character` class. E.g., `c("bmi", "chl")`.
+#' @param vs Character vector, variables from `imp`. E.g., `c("bmi", "chl")`.
 #'
-#' @param title The title of your correlation matrix. Must be `character` class. Optional.
+#' @param title Character vector, title of your correlation matrix. Optional.
 #'
-#' @param nm Preferred variable names. Must be `character` class. E.g., `c("BMI", "Cholesterol")`. Optional.
+#' @param nm Character vector, preferred variable names. E.g., `c("BMI", "Cholesterol")`. Optional.
 #'
 #' @export
 
