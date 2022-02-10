@@ -4,16 +4,16 @@
 \alias{mice_df}
 \title{Create a descriptive statistics table from imputed data.}
 \usage{
-mice_df(mids, vs, title, nm)
+mice_df(imp, vs, title, nm)
 }
 \arguments{
-\item{mids}{A \code{mids} object.}
+\item{imp}{A \code{mids} object.}
 
-\item{vs}{Variables from \code{mids}. Must be \code{character} class. E.g., \code{c("bmi", "chl")}.}
+\item{vs}{Character vector, variables from \code{imp}. E.g., \code{c("bmi", "chl")}.}
 
-\item{title}{The title of your correlation matrix. Must be \code{character} class. Optional.}
+\item{title}{Character vector, title of your correlation matrix. Optional.}
 
-\item{nm}{Preferred variable names. Must be \code{character} class. E.g., \code{c("BMI", "Cholesterol")}. Optional.}
+\item{nm}{Character vector, preferred variable names. E.g., \code{c("BMI", "Cholesterol")}. Optional.}
 }
 \description{
 This takes data from a \code{mids} object and turns the variables you specify
