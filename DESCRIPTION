@@ -1,5 +1,5 @@
 Package: tablecloth
-Title: An R package that makes tables (and other output) nicer
+Title: tablecloth
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Julianna",
