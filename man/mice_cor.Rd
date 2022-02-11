@@ -11,7 +11,7 @@ mice_cor(imp, vs, title)
 
 \item{vs}{Character vector, variables from \code{imp}. E.g., \code{c("bmi", "chl")}.}
 
-\item{title}{Character vectpr, title of your correlation matrix. Optional.}
+\item{title}{Character, title of your correlation matrix. Optional.}
 }
 \description{
 This takes data from a \code{mids} object and turns the variables you specify

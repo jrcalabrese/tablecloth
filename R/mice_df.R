@@ -13,6 +13,12 @@
 #'
 #' @param nm Character vector, preferred variable names. E.g., `c("BMI", "Cholesterol")`. Optional.
 #'
+#' @importFrom stats setNames
+#' @importFrom mice complete
+#' @importFrom tibble rownames_to_column
+#' @importFrom dplyr %>%
+#' @importFrom rrtable df2flextable
+#' @importFrom flextable add_header_lines
 #' @export
 
 mice_df <- function(imp, vs, title, nm){

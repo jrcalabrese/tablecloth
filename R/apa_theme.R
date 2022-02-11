@@ -5,6 +5,11 @@
 #'
 #' @param ft A `flextable` or `gtsummary` object. Will convert to `flextable` if not a `flextable` object.
 #'
+#' @importFrom methods is
+#' @importFrom dplyr %>%
+#' @importFrom gtsummary as_flex_table
+#' @importFrom flextable font fontsize align rotate hline_top hline_bottom border_remove set_table_properties color
+#' @importFrom officer fp_border
 #' @export
 
 apa_theme <- function (ft)  {

@@ -8,13 +8,6 @@
 #' @details
 #' \if{html}{\figure{sticker.PNG}{options: width="20%"}}
 #'
-#' @importFrom mice complete
-#' @importFrom miceadds micombine.cor
-#' @importFrom tibble column_to_rownames
-#' @importFrom dplyr group_by
-#' @importFrom tidyr pivot_longer
-#' @importFrom rrtable df2flextable
-#' @importFrom flextable compose add_header_lines
 #' @docType package
 #'
 NULL

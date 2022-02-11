@@ -10,6 +10,10 @@
 #'
 #' @param title Character vector, table title. Optional.
 #'
+#' @importFrom stats p.adjust
+#' @importFrom dplyr %>%
+#' @importFrom rrtable df2flextable
+#' @importFrom flextable add_header_lines align_text_col align_nottext_col
 #' @export
 pval_table <- function(..., digits, title){
 
@@ -57,7 +61,7 @@ pval_table <- function(..., digits, title){
     tablecloth::apa_theme()  %>%
     flextable::add_header_lines(values = title) %>%
     flextable::align_text_col(align = "left", header = FALSE) %>%
-    align_nottext_col(align = "center", header = TRUE)
+    flextable::align_nottext_col(align = "center", header = TRUE)
 
   return(z)
 }

@@ -9,30 +9,38 @@
 #'
 #' @param vs Character vector, variables from `imp`. E.g., `c("bmi", "chl")`.
 #'
-#' @param title Character vectpr, title of your correlation matrix. Optional.
+#' @param title Character, title of your correlation matrix. Optional.
 #'
+#' @importFrom miceadds micombine.cor
+#' @importFrom dplyr mutate select group_by %>%
+#' @importFrom tibble column_to_rownames
+#' @importFrom tidyr pivot_longer
+#' @importFrom rrtable df2flextable
+#' @importFrom flextable compose add_header_lines as_paragraph as_chunk
 #' @export
 mice_cor <- function(imp, vs, title) {
+
+  # https://nathaneastwood.github.io/2019/08/18/no-visible-binding-for-global-variable/
+  p <- r <- value <- variable1 <- variable2 <- NULL
 
   # use micombine.cor
   res <- miceadds::micombine.cor(mi.res = imp, variables = vs) %>%
     dplyr::select(c(variable1,variable2, r, p))
 
   # round digits
-  res$r <- round(res$r, digits = 2)
-  res$r <- sub("^(-?)0.", "\\1.", sprintf("%.2f", res$r))
-  res$p <- round(res$p, digits = 3)
-  res$p <- sub("^(-?)0.", "\\1.", sprintf("%.2f", res$p))
-
-  # Surround with parentheses
-  res$p <- paste0("(",res$p,")")
-
-  # Combine
-  res$value <- paste0(res$r," \n ",res$p)
+  res <- res %>%
+    dplyr::mutate(r = round(res$r, digits = 2)) %>%
+    dplyr::mutate(r = sub("^(-?)0.", "\\1.", sprintf("%.2f", r))) %>%
+    dplyr::mutate(p = round(res$p, digits = 3)) %>%
+    dplyr::mutate(p = sub("^(-?)0.", "\\1.", sprintf("%.2f", p))) %>%
+    # Surround with parentheses
+    dplyr::mutate(p = paste0("(",res$p,")")) %>%
+    # Combine
+    dplyr::mutate(value = paste0(res$r," \n ", p))
 
   # Get rid of old columns
-  res$r <- NULL
-  res$p <- NULL
+  res <- res %>%
+    dplyr::select(-c(r, p))
 
   # Make wide
   res <- res %>%
@@ -66,7 +74,9 @@ mice_cor <- function(imp, vs, title) {
     align_body = "left",
     NA2space = TRUE) %>%
     tablecloth::apa_theme() %>%
-    flextable::compose(i = 1, j = 1, part = "header", as_paragraph(as_chunk(" "))) %>%
+    flextable::compose(i = 1, j = 1,
+                       part = "header",
+                       flextable::as_paragraph(flextable::as_chunk(" "))) %>%
     flextable::add_header_lines(values = title)
 
   return(res)

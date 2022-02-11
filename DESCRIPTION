@@ -1,5 +1,5 @@
 Package: tablecloth
-Title: An R package that makes tables (and other output) nicer.
+Title: An R package that makes tables (and other output) nicer
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Julianna",
@@ -12,12 +12,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-Imports: dplyr,
-	tidyr,
-	tibble,
-	mice (>= 3.14.0),
-	miceadds,
-	flextable,
-	rrtable
-Suggests: rmarkdown, knitr, gtsummary
+Imports: dplyr, tidyr, tibble, mice, miceadds, flextable, rrtable, gtsummary, methods, officer
+Suggests: rmarkdown, knitr
 VignetteBuilder: knitr
