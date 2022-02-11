@@ -11,7 +11,7 @@ library(tablecloth)
 
 ## Introduction
 
-The **tablecloth** package is a continual work-in progress and is a collection of functions that help to create and format tables to be publication-ready. 
+The **tablecloth** is a collection of functions to help create and format APA-style tables.
 
 If you have questions or comments, feel free to DM me on Twitter `@jrosecalabrese`.
 
