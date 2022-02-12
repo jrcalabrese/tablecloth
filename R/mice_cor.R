@@ -29,14 +29,14 @@ mice_cor <- function(imp, vs, title) {
 
   # round digits
   res <- res %>%
-    dplyr::mutate(r = round(res$r, digits = 2)) %>%
+    dplyr::mutate(r = round(r, digits = 2)) %>%
     dplyr::mutate(r = sub("^(-?)0.", "\\1.", sprintf("%.2f", r))) %>%
-    dplyr::mutate(p = round(res$p, digits = 3)) %>%
+    dplyr::mutate(p = round(p, digits = 3)) %>%
     dplyr::mutate(p = sub("^(-?)0.", "\\1.", sprintf("%.2f", p))) %>%
     # Surround with parentheses
-    dplyr::mutate(p = paste0("(",res$p,")")) %>%
+    dplyr::mutate(p = paste0("(",p,")")) %>%
     # Combine
-    dplyr::mutate(value = paste0(res$r," \n ", p))
+    dplyr::mutate(value = paste0(r," \n ", p))
 
   # Get rid of old columns
   res <- res %>%
