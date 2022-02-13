@@ -77,7 +77,7 @@ mice_cor <- function(imp, vs, title) {
     flextable::compose(i = 1, j = 1,
                        part = "header",
                        flextable::as_paragraph(flextable::as_chunk(" "))) %>%
-    flextable::add_header_lines(values = title)
+    flextable::add_header_lines(values = title, top = TRUE)
 
   return(res)
 }
