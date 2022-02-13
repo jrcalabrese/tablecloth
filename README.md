@@ -40,7 +40,7 @@ mice_df(imp = imp,
 
 ## `mice_cor()`
 
-```{r}
+``` r
 data(nhanes)
 imp <- mice::mice(nhanes, m = 5, print = FALSE)
 vs <- c("bmi", "chl", "age", "hyp")
