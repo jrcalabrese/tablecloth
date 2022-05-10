@@ -4,11 +4,14 @@
 \alias{clear_out}
 \title{Apply clear background to ggplot.}
 \usage{
-clear_out(clr)
+clear_out(clr, bg)
 }
 \arguments{
 \item{clr}{Desired outline color.}
+
+\item{bg}{Should background be transparent? Binary.}
 }
 \description{
 Applies a totally-clear/transparent background to a ggplot2 object as a theme.
+Uses \code{theme_bw()}.
 }
